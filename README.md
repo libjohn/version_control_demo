@@ -4,6 +4,8 @@ SAMPLE \* SAMPLE \* SAMPLE \* SAMPLE
 
 ### **Project Title: Investigating the Impact of Climate Change on Coastal Ecosystems**
 
+> NOTE: The main analysis file can be found in `scripts/index.qmd`
+
 **Project Overview:** This research project aims to investigate the effects of climate change on coastal ecosystems, specifically focusing on sea-level rise, ocean acidification, and their combined impact on marine biodiversity and ecosystem services.
 
 **Research Questions:**

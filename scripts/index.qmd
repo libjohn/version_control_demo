@@ -20,8 +20,9 @@ My data were imported from `dplyr::starwars`{=}
 #| echo: true
 #| warning: false
 library(tidyverse)
+library(here)
 
-my_raw_data <- read_csv("data/raw/my_raw_data.csv")
+my_raw_data <- read_csv(here("data/raw/my_raw_data.csv"))
 ```
 
 ## Wrangle data
@@ -34,7 +35,7 @@ my_data <- my_raw_data |>
 
 # export cleaned data
 my_data |> 
-  write_csv("data/clean/clean_data.csv")
+  write_csv(here("data/clean/clean_data.csv"))
 ```
 
 ## Visualize
@@ -49,4 +50,10 @@ my_data |>
   geom_text(aes(label = name), nudge_x = 2, nudge_y = 2) +
   theme_classic() +
   labs(title = "My scatter plot title")
+```
+
+## Export images to image directory
+
+```{r}
+ggsave(here("images/my_scatterplot.png"))
 ```
