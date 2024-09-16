@@ -1,0 +1,46 @@
+---
+title: "version_control_demo"
+---
+
+## Working with data
+
+This project attempts to find a pattern with some sample data
+
+## Import data
+
+My data were imported from `dplyr::starwars`{=}
+
+```{r}
+#| echo: true
+#| warning: false
+library(tidyverse)
+
+my_raw_data <- read_csv("data/raw/my_raw_data.csv")
+```
+
+## Wrangle data
+
+I subsetted my data by eliminating any character that does not have an assigned sex characteristic.
+
+```{r}
+my_data <- my_raw_data |> 
+  filter(sex == "none")
+
+# export cleaned data
+my_data |> 
+  write_csv("data/clean/clean_data.csv")
+```
+
+## Visualize
+
+I want to plot the remaining data.
+
+```{r}
+my_data |> 
+  drop_na() |> 
+  ggplot(aes(height, mass)) +
+  geom_jitter(aes(color = gender)) +
+  geom_text(aes(label = name), nudge_x = 2, nudge_y = 2) +
+  theme_classic() +
+  labs(title = "My scatter plot title")
+```
