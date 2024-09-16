@@ -1,14 +1,8 @@
 project:
   title: "version_control_demo"
-
+  output-dir: "reports"
+  
 author: "John Little"
 license: "CC BY-NC-SA 4.0"
 
 editor: visual
-
-output:
-  html:
-    self-contained: true
-    toc: true
-    output-dir: "reports"
-    file: "index.html"
