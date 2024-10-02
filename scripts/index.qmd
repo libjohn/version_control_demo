@@ -46,8 +46,10 @@ I want to plot the remaining data.
 my_data |> 
   drop_na() |> 
   ggplot(aes(height, mass)) +
-  geom_jitter(aes(color = gender)) +
-  geom_text(aes(label = name), nudge_x = 2, nudge_y = 2) +
+  # geom_jitter(aes(color = gender)) +
+  geom_point() +
+  #geom_text(aes(label = name), nudge_x = 2, nudge_y = 2) +
+  ggrepel::geom_label_repel(aes(label = name)) +
   theme_classic() +
   labs(title = "My scatter plot title")
 ```
